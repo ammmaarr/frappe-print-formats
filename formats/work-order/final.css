@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+@page {
+  size: A4;
+  margin: 0 !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 9pt;
+  color: #222;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  break-inside: auto !important;
+  page-break-inside: auto !important;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tr {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* ── Structural / print classes ── */
+
+.doc-header {
+  padding: 4mm 0 6mm 0;
+}
+
+.content-wrap {
+  padding-bottom: 16mm;
+}
+
+.print-footer {
+  display: none;
+}
+
+.footer-image {
+  transform: rotate(180deg) scaleX(-1.05) scaleY(1.5) translateX(2.5%);
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print-footer {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #666;
+  }
+
+  .content-wrap,
+  tbody,
+  .page-content {
+    display: block !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    break-before: auto !important;
+    page-break-before: auto !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  tbody {
+    display: table-row-group !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  tr {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  td,
+  th {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    overflow: visible !important;
+  }
+}
+
+.px-\[30px\] {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-\[1fr_4fr\] {
+  grid-template-columns: 1fr 4fr;
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.border {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.border-black {
+  border-color: #000;
+}
+
+.border-b-0 {
+  border-bottom-width: 0;
+}
+
+.border-t-0 {
+  border-top-width: 0;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.bg-\[\#EAEAEA\] {
+  background-color: #eaeaea;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-lg {
+  font-size: 18px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-large {
+  gap: 300px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.gap-6 {
+  gap: 24px;
+}
+
+.mt-10 {
+  margin-top: 40px;
+}
+
+.p-2 {
+  padding: 8px;
+}

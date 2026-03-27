@@ -1,0 +1,32 @@
+{% set cs = get_company_settings() %} {% set customer =
+frappe.get_doc("Customer", doc.customer) %} {% set billing_addr =
+customer.addresses | selectattr("address_type", "equalto", "Billing") | first |
+default(none) %}
+
+<link rel="stylesheet" href="quotation.css" />
+
+<!-- ═══ Main Content ═══ -->
+<div class="content-wrap">
+  <table>
+    <!-- ── Repeating Header (letterhead) ── -->
+    <thead>
+      <tr>
+        <td>
+          <div class="doc-header">
+            {% if letter_head and not no_letterhead %} {{ letter_head }} {%
+            endif %}
+          </div>
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- ── Items Table ── -->
+      <tr>
+        <td class="px-[30px]">
+          <!-- Insert body here -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
