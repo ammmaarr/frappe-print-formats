@@ -49,7 +49,7 @@ doc.project)%} {% set customer = frappe.get_doc("Customer", project.customer) %}
                   </p>
                 </div>
                 <div></div>
-                <div class="flex flex-col gap-6 mt-4">
+                <div class="flex flex-col gap-4 mt-4">
                   <div class="grid grid-cols-2">
                     <p class="text-sm font-semibold">ŘIDIČ:</p>
                     <p>________________________</p>
@@ -74,7 +74,7 @@ doc.project)%} {% set customer = frappe.get_doc("Customer", project.customer) %}
                   <p>________________________</p>
                 </div>
               </div>
-              <div class="grid grid-cols-[1fr_4fr] grid-rows-3">
+              <div class="grid grid-cols-[1fr_4fr] grid-rows-3 mt-4">
                 <p
                   class="bg-[#EAEAEA] h-full flex items-center text-xs font-semibold p-2"
                 >
@@ -118,7 +118,141 @@ doc.project)%} {% set customer = frappe.get_doc("Customer", project.customer) %}
                 </p>
                 <p class="w-full border border-black h-full"></p>
               </div>
-              <p class="text-xs">
+              <p class="text-xs mt-4">
+                Za přepravu materiálu bez závad, správné zajištění a včasné
+                dodání nákladu ručí a dnešního dne převzal:
+              </p>
+              <div class="flex items-end justify-end">
+                <p>________________________</p>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% set cs = get_company_settings() %} {% set project = frappe.get_doc("Project",
+doc.project)%} {% set customer = frappe.get_doc("Customer", project.customer) %}
+{% set billing_addr = customer.addresses | selectattr("address_type", "equalto",
+"Billing") | first | default(none) %}
+
+<link rel="stylesheet" href="final.css" />
+<!-- ═══ Main Content ═══ -->
+<div class="content-wrap">
+  <table class="h-full">
+    <!-- ── Repeating Header (letterhead) ── -->
+    <thead>
+      <tr>
+        <td>
+          <div class="doc-header">
+            {% if letter_head and not no_letterhead %} {{ letter_head }} {%
+            endif %}
+          </div>
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- ── Items Table ── -->
+      <tr>
+        <td class="px-[30px]">
+          <div class="flex flex-col gap-large justify-between">
+            <div class="flex flex-col gap-2 justify-between">
+              <div class="grid grid-cols-2">
+                <p class="text-base font-semibold">
+                  DODACÍ LIST K PŘEVOZU/PŘEPRAVĚ Z. Č.
+                </p>
+                <p class="text-base font-semibold">PROMĚNNÉ</p>
+                <div class="flex flex-col mt-4">
+                  <p class="text-sm font-semibold">OBJEDNATEL</p>
+                  <p class="text-sm">
+                    SCHNEIDER construction s.r.o. <br />
+                    Průmyslová 957/5 Bolatice <br />
+                    747 23 <br />
+                    IČO : 27790991
+                  </p>
+                </div>
+                <div class="flex flex-col mt-4">
+                  <p class="text-sm font-semibold">PŘEPRAVCE</p>
+                  <p class="text-sm">
+                    Jméno Proměnné <br />
+                    Adresa Proměnné <br />
+                    Adresa Proměnné <br />
+                    IČO: Proměnné
+                  </p>
+                </div>
+                <div></div>
+                <div class="flex flex-col gap-4 mt-4">
+                  <div class="grid grid-cols-2">
+                    <p class="text-sm font-semibold">ŘIDIČ:</p>
+                    <p>________________________</p>
+                  </div>
+                  <div class="grid grid-cols-2">
+                    <p class="text-sm font-semibold">KONTAKT:</p>
+                    <p>________________________</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-10">
+                <p>Dnešního dne byl naložen náklad na vůz PZ:</p>
+                <p>________________________</p>
+                <p>v rozsahu:</p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 justify-between h-full">
+              <div class="grid grid-cols-2">
+                <div></div>
+                <div class="grid grid-cols-2">
+                  <p class="text-sm font-semibold">Náklad předal:</p>
+                  <p>________________________</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-[1fr_4fr] grid-rows-3 mt-4">
+                <p
+                  class="bg-[#EAEAEA] h-full flex items-center text-xs font-semibold p-2"
+                >
+                  MÍSTO NAKLÁDKY:
+                </p>
+                <p class="w-full border border-black h-full"></p>
+                <p
+                  class="bg-[#EAEAEA] h-full flex items-center text-xs font-semibold p-2"
+                >
+                  DATUM:
+                </p>
+                <p
+                  class="w-full border border-b-0 border-t-0 border-black h-full"
+                ></p>
+                <p
+                  class="bg-[#EAEAEA] h-full flex items-center text-xs font-semibold p-2"
+                >
+                  ČAS:
+                </p>
+                <p class="w-full border border-black h-full"></p>
+              </div>
+              <div class="grid grid-cols-[1fr_4fr] grid-rows-3">
+                <p
+                  class="bg-[#EAEAEA] h-full flex items-center text-xs font-semibold p-2"
+                >
+                  MÍSTO NAKLÁDKY:
+                </p>
+                <p class="w-full border border-black h-full"></p>
+                <p
+                  class="bg-[#EAEAEA] h-full flex items-center text-xs font-semibold"
+                >
+                  DATUM:
+                </p>
+                <p
+                  class="w-full border border-b-0 border-t-0 border-black h-full"
+                ></p>
+                <p
+                  class="bg-[#EAEAEA] h-full flex items-center text-xs font-semibold p-2"
+                >
+                  ČAS:
+                </p>
+                <p class="w-full border border-black h-full"></p>
+              </div>
+              <p class="text-xs mt-4">
                 Za přepravu materiálu bez závad, správné zajištění a včasné
                 dodání nákladu ručí a dnešního dne převzal:
               </p>
