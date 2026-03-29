@@ -1,0 +1,497 @@
+{% set cs = get_company_settings() %} {% set customer =
+frappe.get_doc("Customer", doc.customer) %} {% set billing_addr =
+customer.addresses | selectattr("address_type", "equalto", "Billing") | first |
+default(none) %}
+
+<link rel="stylesheet" href="project.css" />
+
+<!-- ═══ Main Content ═══ -->
+<div class="content-wrap">
+  <table>
+    <!-- ── Repeating Header (letterhead) ── -->
+    <thead>
+      <tr>
+        <td>
+          <div class="doc-header">
+            {% if letter_head and not no_letterhead %} {{ letter_head }} {%
+            endif %}
+          </div>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ── Items Table ── -->
+      <tr>
+        <td class="">
+          <div class="flex flex-col gap-2">
+            <div class="grid grid-cols-2 gap-6 text-xs">
+              <div class="flex flex-col gap-1">
+                <div class="grid grid-cols-[1fr_3fr]">
+                  <div
+                    class="bg-[#EAEAEA] p-4 flex justify-center items-center"
+                  >
+                    <p class="text-xs font-bold">OBJEDNATEL:</p>
+                  </div>
+                  <div class="grid grid-cols-[1fr_2fr] border-2 border-black">
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 font-bold"
+                    >
+                      Firma
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 font-bold"
+                    >
+                      Adresa
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 font-bold"
+                    >
+                      Určený zástupce
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 border-b-0 font-bold"
+                    >
+                      Kontakt
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 border-b-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                  </div>
+                </div>
+                <div class="grid grid-cols-[1fr_3fr]">
+                  <div
+                    class="bg-[#EAEAEA] p-4 flex justify-center items-center"
+                  >
+                    <p class="text-xs font-bold">DODAVATEL:</p>
+                  </div>
+                  <div class="grid grid-cols-[1fr_2fr] border-2 border-black">
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 font-bold"
+                    >
+                      Firma
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 font-bold"
+                    >
+                      Adresa
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 font-bold"
+                    >
+                      Určený zástupce
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 pb-[10px] border-b-0 font-bold"
+                    >
+                      Kontakt
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 border-b-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <div class="grid grid-cols-[1fr_3fr]">
+                  <div
+                    class="bg-[#EAEAEA] p-4 flex justify-center items-center"
+                  >
+                    <p class="text-xs font-bold">STAVBA:</p>
+                  </div>
+                  <div class="grid grid-cols-2 border-2 border-black">
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 font-bold"
+                    >
+                      Název / objekt:
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 font-bold"
+                    >
+                      Adresa:
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 font-bold"
+                    >
+                      Č. smlouvy:
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 font-bold"
+                    >
+                      Č. zakázky objednatele:
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 border-b-0 p-1 font-bold"
+                    >
+                      Č. zakázky dodavatele:
+                    </p>
+                    <p
+                      class="border-2 border-black border-l-0 border-t-0 border-b-0 p-1 border-r-0"
+                    >
+                      Proměnné
+                    </p>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 text-xs">
+                  <p
+                    class="border-2 border-black bg-[#EAEAEA] p-1 text-xs font-bold"
+                  >
+                    ČÍSLO SPP:
+                  </p>
+                  <p class="border-2 border-black p-1 border-t-0 font-light">
+                    Proměnné
+                  </p>
+                  <p
+                    class="border-2 border-black border-t-0 bg-[#EAEAEA] p-1 text-xs font-bold"
+                  >
+                    FAKTURAČNÍ OBDOBÍ:
+                  </p>
+                  <p class="border-2 border-black p-1 border-t-0 font-light">
+                    Proměnné
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex gap-1 items-start">
+              <!-- Table 1: Označení / Název / MJ -->
+              <table class="flex-3 border-collapse text-xs font-normal">
+                <thead>
+                  <tr>
+                    <th
+                      class="border-2 border-l-0 border-t-0 border-black bg-[#EAEAEA] p-2 text-center align-middle h-[64px] w-[15%]"
+                    >
+                      Označení položky
+                    </th>
+                    <th
+                      class="border-2 border-t-0 border-black bg-[#EAEAEA] p-1 text-center align-middle"
+                    >
+                      Název položky
+                    </th>
+                    <th
+                      class="border-2 border-t-0 border-r-0 border-black bg-[#EAEAEA] p-1 text-center align-middle w-[15%]"
+                    >
+                      MJ
+                    </th>
+                  </tr>
+                  <tr></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Table 2: Celková cena -->
+              <table class="flex-2 border-collapse text-xs font-normal">
+                <thead>
+                  <tr>
+                    <th class="bg-[#EAEAEA] p-1 text-center" colspan="3">
+                      Celková cena
+                    </th>
+                  </tr>
+                  <tr>
+                    <th
+                      class="border-2 border-black bg-[#EAEAEA] p-1 text-center border-l-0 w-[15%]"
+                    >
+                      Množství
+                    </th>
+                    <th
+                      class="border-2 border-black bg-[#EAEAEA] p-1 text-center"
+                    >
+                      Cena za MJ
+                    </th>
+                    <th
+                      class="border-2 border-black bg-[#EAEAEA] p-1 text-center border-r-0"
+                    >
+                      Cena celkem
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Table 3: Dosud fakturováno -->
+              <table class="flex-1 border-collapse text-xs font-normal">
+                <thead>
+                  <tr>
+                    <th class="bg-[#EAEAEA] p-1 text-center" colspan="2">
+                      Dosud fakturováno
+                    </th>
+                  </tr>
+                  <tr>
+                    <th
+                      class="border-2 border-l-0 border-black bg-[#EAEAEA] p-1 text-center"
+                    >
+                      Množství
+                    </th>
+                    <th
+                      class="border-2 border-r-0 border-black bg-[#EAEAEA] p-1 text-center"
+                    >
+                      Cena
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Table 4: Dosud fakturováno -->
+              <table class="flex-1 border-collapse text-xs font-normal">
+                <thead>
+                  <tr>
+                    <th class="bg-[#EAEAEA] p-1 text-center" colspan="2">
+                      Dosud fakturováno
+                    </th>
+                  </tr>
+                  <tr>
+                    <th
+                      class="border-2 border-l-0 border-black bg-[#EAEAEA] p-1 text-center"
+                    >
+                      Množství
+                    </th>
+                    <th
+                      class="border-2 border-r-0 border-black bg-[#EAEAEA] p-1 text-center"
+                    >
+                      Cena
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Table 5: Dosud fakturováno -->
+              <table class="flex-1 border-collapse text-xs font-normal">
+                <thead>
+                  <tr>
+                    <th class="bg-[#EAEAEA] p-1 text-center" colspan="2">
+                      Dosud fakturováno
+                    </th>
+                  </tr>
+                  <tr>
+                    <th
+                      class="border-2 border-l-0 border-black bg-[#EAEAEA] p-1 text-center"
+                    >
+                      Množství
+                    </th>
+                    <th
+                      class="border-2 border-r-0 border-black bg-[#EAEAEA] p-1 text-center"
+                    >
+                      Cena
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                  <tr>
+                    <td class="border-2 border-black p-1">Proměnné</td>
+                    <td class="border-2 border-black p-1">proměnné</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="grid grid-cols-3 text-xs">
+              <div></div>
+              <div class="flex flex-col gap-1 col-span-2">
+                <!-- Summary row -->
+                <div class="flex gap-4">
+                  <div class="flex-1 flex flex-col">
+                    <p class="bg-[#EAEAEA] p-1 text-center">Celková cena</p>
+                    <p class="p-1 text-center border-2 border-black font-light">
+                      Proměnné
+                    </p>
+                  </div>
+                  <div class="flex-1 flex flex-col">
+                    <p class="bg-[#EAEAEA] p-1 text-center">
+                      Dosud fakturováno
+                    </p>
+                    <p class="p-1 text-center font-light border-2 border-black">
+                      Proměnné
+                    </p>
+                  </div>
+                  <div class="flex-1 flex flex-col">
+                    <p class="bg-[#EAEAEA] p-1 text-center">Fakturuje se</p>
+                    <p class="p-1 text-center font-light border-2 border-black">
+                      Proměnné
+                    </p>
+                  </div>
+                  <div class="flex-1 flex flex-col">
+                    <p class="bg-[#EAEAEA] p-1 text-center">Zbývá fakturovat</p>
+                    <p class="p-1 text-center font-light border-2 border-black">
+                      Proměnné
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Signature section -->
+                <div class="flex border-2 border-black">
+                  <div
+                    class="bg-[#EAEAEA] p-1 flex items-center w-1/4 border-r-2 border-black"
+                  >
+                    <p class="font-bold">
+                      Za objednavatele zkontroloval a schválil:
+                    </p>
+                  </div>
+                  <div class="flex flex-col flex-1">
+                    <div class="flex border-b-2 border-black">
+                      <p class="p-1 font-bold border-r-2 border-black w-1/3">
+                        Jméno:
+                      </p>
+                      <p class="p-1">Proměnné</p>
+                    </div>
+                    <div class="flex border-b-2 border-black">
+                      <p class="p-1 font-bold border-r-2 border-black w-1/3">
+                        Datum:
+                      </p>
+                      <p class="p-1">Proměnné</p>
+                    </div>
+                    <div class="flex">
+                      <p class="p-1 font-bold h-16">Razítko / podpis:</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

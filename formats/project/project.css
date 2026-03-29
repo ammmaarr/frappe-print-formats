@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+@page {
+  size: A4 landscape !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-weight: 400;
+}
+
+th {
+  color: black !important;
+}
+
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 2pt;
+  color: black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  break-inside: auto !important;
+  page-break-inside: auto !important;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tr {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* ── Structural / print classes ── */
+
+.doc-header {
+  /* padding: 4mm 0 6mm 0; */
+}
+
+.content-wrap {
+  /* padding-bottom: 16mm; */
+}
+
+.print-footer {
+  display: none;
+}
+
+.footer-image {
+  transform: rotate(180deg) scaleX(-1.05) scaleY(1.5) translateX(2.5%);
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print-footer {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #666;
+  }
+
+  .content-wrap,
+  tbody,
+  .page-content {
+    display: block !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    break-before: auto !important;
+    page-break-before: auto !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    table-layout: fixed;
+  }
+
+  thead {
+    display: table-header-group !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  tbody {
+    display: table-row-group !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  tr {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  td,
+  th {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    overflow: visible !important;
+  }
+}
+
+/* ── Layout ── */
+
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.items-start {
+  align-items: flex-start;
+}
+.justify-center {
+  justify-content: center;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+.flex-2 {
+  flex: 2 2 0%;
+}
+.flex-3 {
+  flex: 3 3 0%;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-\[1fr_2fr\] {
+  grid-template-columns: 1fr 2fr;
+}
+.grid-cols-\[1fr_3fr\] {
+  grid-template-columns: 1fr 3fr;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+.gap-6 {
+  gap: 1.5rem;
+}
+.gap-16 {
+  gap: 4rem;
+}
+
+/* ── Sizing ── */
+
+.w-1\/4 {
+  width: 25%;
+}
+.w-1\/3 {
+  width: 33.333333%;
+}
+.w-\[15\%\] {
+  width: 15%;
+}
+.h-8 {
+  height: 2rem;
+}
+.h-16 {
+  height: 4rem;
+}
+.h-\[64px\] {
+  height: 72px;
+}
+
+/* ── Spacing ── */
+
+.p-2 {
+  padding: 0.5rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.p-1 {
+  padding: 4px;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+.px-\[30px\] {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.pb-\[10px\] {
+  padding-bottom: 10px;
+}
+
+/* ── Typography ── */
+
+.font-bold {
+  font-weight: 700;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-light {
+  font-weight: 300;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-xs {
+  font-size: 10px;
+}
+.text-sm {
+  font-size: 14px;
+}
+.text-center {
+  text-align: center;
+}
+.align-middle {
+  vertical-align: middle;
+}
+
+/* ── Colors ── */
+
+.bg-\[\#EAEAEA\] {
+  background-color: #eaeaea;
+}
+
+/* ── Borders ── */
+
+.border-2 {
+  border: 2px solid;
+}
+.border-b-2 {
+  border-bottom: 2px solid;
+}
+.border-r-2 {
+  border-right: 2px solid;
+}
+.border-l-0 {
+  border-left: 0;
+}
+.border-r-0 {
+  border-right: 0;
+}
+.border-t-0 {
+  border-top: 0;
+}
+.border-b-0 {
+  border-bottom: 0;
+}
+.border-collapse {
+  border-collapse: collapse;
+}
+.border-black {
+  border-color: #000;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gap-2 {
+  gap: 8px;
+}
