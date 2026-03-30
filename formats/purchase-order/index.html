@@ -1,0 +1,170 @@
+<link rel="stylesheet" href="index.css" />
+<!-- ═══ Main Content ═══ -->
+<div class="content-wrap">
+  <table>
+    <!-- ── Repeating Header (letterhead) ── -->
+    <thead>
+      <tr>
+        <td>
+          <div class="doc-header">
+            {% if letter_head and not no_letterhead %} {{ letter_head }} {%
+            endif %}
+          </div>
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- ── Items Table ── -->
+      <tr>
+        <td>
+          <div class="text-black flex flex-col gap-4">
+            <!-- Title row -->
+            <div
+              class="flex justify-between items-baseline border-b border-black pb-2"
+            >
+              <h1 class="text-lg font-bold text-[#6B6B6B]">OBJEDNÁVKA Č.</h1>
+              <span class="text-lg font-bold">Proměnné</span>
+            </div>
+
+            <!-- Two-column section -->
+            <div class="grid grid-cols-2 gap-6">
+              <!-- Left: company info sections -->
+              <div class="flex flex-col gap-4">
+                <div>
+                  <p class="font-bold text-xs mb-1">OBJEDNÁVACÍ</p>
+                  <p class="text-xs ml-6">
+                    <strong>
+                      SCHNEIDER construction s.r.o.<br />
+                      Průmyslová 957/5<br />
+                      747 23 Bolatice<br />
+                    </strong>
+                    IČO: <strong>27790991</strong><br />
+                    DIČ: <strong>CZ27790991</strong><br />
+                    <strong>
+                      www.schneider-construction.cz<br />
+                      info@hlinikovesystemy.cz</strong
+                    >
+                  </p>
+                </div>
+                <div>
+                  <p class="font-bold text-xs mb-1">FAKTURAČNÍ ADRESA</p>
+                  <p class="text-xs leading-snug ml-6 font-bold">
+                    Průmyslová 957/5<br />
+                    747 23 Bolatice
+                  </p>
+                </div>
+                <div>
+                  <p class="font-bold text-xs mb-1">
+                    ADRESA DODÁNÍ NEBO MÍSTO PLNĚNÍ
+                  </p>
+                  <p class="text-xs leading-snug ml-6 font-bold">
+                    Průmyslová 957/5<br />
+                    747 23 Bolatice
+                  </p>
+                </div>
+              </div>
+
+              <!-- Right: DODAVATEL box -->
+              <div class="flex flex-col">
+                <p class="font-bold text-xs pb-1">DODAVATEL</p>
+                <div
+                  class="border border-black flex justify-between flex-col gap-2"
+                >
+                  <p class="text-xs font-semibold p-2 leading-snug">
+                    Firma proměnné<br />
+                    Adresa proměnné<br />
+                    Adresa proměnné<br />
+                    IČO: Proměnné<br />
+                    DIČ: Proměnné
+                  </p>
+                  <div class="relative border-b border-[#6B6B6B] w-full">
+                    <p
+                      class="absolute bottom-0 left-4 px-2 translate-y-1/2 bg-white font-semibold text-[#6B6B6B]"
+                    >
+                      referent
+                    </p>
+                  </div>
+                  <p class="text-xs font-semibold p-2 pb-4">Neuvedeno</p>
+                </div>
+                <div class="grid grid-cols-2 gap-1 text-xs text-black mt-4">
+                  <p class="font-light">DATUM VYSTAVENÍ:</p>
+                  <p class="font-semibold">Proměnné</p>
+                  <p class="font-light">TERMÍN DODÁNÍ:</p>
+                  <p class="font-semibold">Proměnné</p>
+                  <p class="font-light">VYSTAVIL:</p>
+                  <p class="font-semibold">Proměnné</p>
+                  <p class="font-light">MĚNA:</p>
+                  <p class="font-semibold">Proměnné</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-b-2 border-black"></div>
+
+            <div class="flex flex-col gap-2 text-xs font-light">
+              <p>Objednáváme u Vás:</p>
+              <p>
+                Objednáváme u Vás výrobu a dodání na sklad RAL 7016 jemná
+                struktura
+              </p>
+            </div>
+
+            <!-- Items table -->
+            <table class="w-full border-collapse text-[7pt]">
+              <thead>
+                <tr class="text-[#6B6B6B] border-b border-[#6B6B6B]">
+                  <th class="px-2 py-1 text-left font-bold">KOD POLOŽKY</th>
+                  <th class="px-2 py-1 text-left font-bold w-44">NÁZEV</th>
+                  <th class="px-2 py-1 text-left font-bold">MNOŽSTVÍ</th>
+                  <th class="px-2 py-1 text-left font-bold">MJ</th>
+                  <th class="px-2 py-1 text-left font-bold">TERMÍN DODÁNÍ</th>
+                  <th class="px-2 py-1 text-left font-bold">CENA/MJ</th>
+                  <th class="px-2 py-1 text-left font-bold">CELKEM</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-black">
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                </tr>
+                <tr>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                  <td class="px-2 py-1 font-bold">Proměnné</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="border-b-2 border-black h-24"></div>
+
+            <div
+              class="mt-10 font-lighter grid grid-cols-3 gap-2 text-xs font-light"
+            >
+              <p class="">Objednávka dle CN viz email:</p>
+              <p class="">Proměnné</p>
+              <div></div>
+              <p class="">datum:</p>
+              <p class="">Proměnné</p>
+              <div></div>
+            </div>
+
+            <!-- Signature line -->
+            <div class="absolute bottom-[100px] right-[50px]">
+              <div class="w-48 border-t border-black"></div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
