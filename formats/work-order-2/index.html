@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="index.css" />
+<!-- ═══ Main Content ═══ -->
+<div class="content-wrap">
+  <table>
+    <!-- ── Repeating Header (letterhead) ── -->
+    <thead>
+      <tr>
+        <td>
+          <div class="doc-header">
+            {% if letter_head and not no_letterhead %} {{ letter_head }} {%
+            endif %}
+          </div>
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- ── Items Table ── -->
+      <tr>
+        <td>
+          <div
+            class="flex flex-col gap-4 text-black font-[Montserrat,sans-serif] px-[30px]"
+          >
+            <!-- Title -->
+            <div class="flex flex-col">
+              <p class="text-2xl font-bold tracking-wide">VADY A NEDODĚLKY</p>
+              <!-- Company description -->
+              <p class="text-[#6B6B6B] text-lg font-bold">
+                společnosti SCHNEIDER construction s.r.o.
+              </p>
+            </div>
+            <p class="text-sm leading-relaxed mt-4">
+              sídlem Bolatice, Průmyslová 957/5, PSČ 747 23, IČ 27790991,
+              zapsané v obchodním rejstříku vedeném krajským soudem v Ostravě v
+              oddílu C, vložka 28100 (dále jen „Zhotovitel")
+            </p>
+
+            <!-- Fields -->
+            <div class="flex flex-col gap-3 mt-4">
+              <div class="flex items-baseline gap-2">
+                <span class="font-bold text-xs whitespace-nowrap"
+                  >ČÍSLO ZAKÁZKY:</span
+                >
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="font-bold text-xs whitespace-nowrap"
+                  >NÁZEV ZAKÁZKY:</span
+                >
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="font-bold text-xs whitespace-nowrap"
+                  >DATUM MONTÁŽE:</span
+                >
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="font-bold text-xs whitespace-nowrap"
+                  >ODPOVĚDNÝ MONTÉR:</span
+                >
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="font-bold text-xs whitespace-nowrap">VAN:</span>
+              </div>
+            </div>
+
+            <!-- Footer field -->
+            <div class="flex items-baseline gap-2 absolute bottom-0 left-0">
+              <span class="font-bold text-xs whitespace-nowrap"
+                >ZAEVIDOVÁNO:</span
+              >
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
