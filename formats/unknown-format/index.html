@@ -1,0 +1,160 @@
+<link rel="stylesheet" href="index.css" />
+<!-- ═══ Main Content ═══ -->
+<div class="content-wrap">
+  <table>
+    <!-- ── Repeating Header (letterhead) ── -->
+    <thead>
+      <tr>
+        <td>
+          <div class="doc-header">
+            {% if letter_head and not no_letterhead %} {{ letter_head }} {%
+            endif %}
+          </div>
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- ── Items Table ── -->
+      <tr>
+        <td>
+          <div class="flex flex-col text-black">
+            <div class="flex flex-col flex-1 gap-6">
+              <div class="flex flex-col">
+                <p class="text-sm font-bold uppercase text-black">
+                  ČÍSLO ZAKÁZKY: PROMĚNNÉ
+                </p>
+                <p
+                  class="text-base uppercase mt-0.5 text-black leading-tight font-bold"
+                >
+                  NÁZEV ZAKÁZKY: PROMĚNNÉ
+                </p>
+              </div>
+
+              <!-- Protocol / number row -->
+              <div
+                class="grid grid-cols-2 gap-x-10 gap-y-4 justify-between mb-3 text-sm"
+              >
+                <p class="font-bold uppercase text-[#6B6B6B]">
+                  INFORMAČNÍ PROTOKOL K ZAKÁZCE / PROJEKTU
+                </p>
+                <p class="font-bold uppercase text-black">ČÍSLO PROMMĚNNÉ</p>
+
+                <div class="flex-1 flex flex-col gap-[3px]">
+                  <p class="font-bold uppercase text-xs mb-1.5">ZHOTOVITEL</p>
+                  <p class="text-xs">SCHNEIDER construction s.r.o.</p>
+                  <p class="text-xs">Průmyslová 957/5 Bolatice</p>
+                  <p class="text-xs">747 23</p>
+                  <p class="text-xs">
+                    IČO: 27790991&nbsp;&nbsp;&nbsp;DIČ: CZ27790991
+                  </p>
+                </div>
+                <div class="flex-1 flex flex-col gap-[3px]">
+                  <p class="font-bold uppercase text-xs mb-1.5">OBJEDNATEL</p>
+                  <p class="text-xs">Proměnné jméno</p>
+                  <p class="text-xs">Proměnné bydliště</p>
+                  <p class="text-xs">Proměnné bydliště</p>
+                  <div class="flex text-xs">
+                    <span class="w-10">IČ :</span>
+                    <span class="pl-2">Proměnné</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Field rows -->
+              <div class="flex flex-col gap-6">
+                <!-- NÁJEMNÍK/VLASTNÍK BYTU -->
+                <div class="grid grid-cols-2 w-1/2">
+                  <div>
+                    <span class="font-bold uppercase xs"
+                      >NÁJEMNÍK/VLASTNÍK BYTU:</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <div class="flex gap-5 text-xs">
+                      <span class="w-16">Jméno:</span>
+                      <span>Proměnné</span>
+                    </div>
+                    <div class="flex gap-5 text-xs">
+                      <span class="w-16">Kontakt:</span>
+                      <span>Proměnné</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 w-1/2">
+                  <div>
+                    <span class="font-bold uppercase xs"
+                      >SOUPIS PROVEDENÝCH PRACÍ:</span
+                    >
+                  </div>
+                  <div>
+                    <span class="text-xs">Proměnné</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 w-1/2">
+                  <div>
+                    <span class="font-bold uppercase xs"
+                      >ROZSAH VÍCEPRACÍ:</span
+                    >
+                  </div>
+                  <div>
+                    <span class="text-xs">Proměnné</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 w-1/2">
+                  <div>
+                    <span class="font-bold uppercase xs"
+                      >ZÁPIS ZHOTOVITELE:</span
+                    >
+                  </div>
+                  <div>
+                    <span class="text-xs">Proměnné</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 w-1/2">
+                  <div>
+                    <span class="font-bold uppercase xs">VAN:</span>
+                  </div>
+                  <div>
+                    <span class="text-xs">Proměnné</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 w-1/2">
+                  <div>
+                    <span class="font-bold uppercase xs">DATUM:</span>
+                  </div>
+                  <div></div>
+                </div>
+              </div>
+
+              <div class="flex justify-between mt-16 mb-10 px-10">
+                <div class="flex flex-col items-center gap-2">
+                  <div class="w-52 border-b border-[#6B6B6B]"></div>
+                  <span class="text-xs text-[#6B6B6B]">Za zhotovitele</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                  <div class="w-52 border-b border-[#6B6B6B]"></div>
+                  <span class="text-xs text-[#6B6B6B]">Za nájemníka</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex px-4 gap-40">
+              <span class="text-xs font-bold uppercase tracking-wider"
+                >MONTÁŽNÍ PARTA:</span
+              >
+              <span class="text-xs font-bold uppercase tracking-wider"
+                >POZICE Č.</span
+              >
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
